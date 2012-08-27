@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<title>BoxBox Example</title>
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+			}
+			button {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="button-begin">Begin</button>
+		<canvas id="canvas" width="500" height="500"></canvas>
+	</body>
+	<script type="text/javascript" src="js/libs/boxbox/Box2dWeb-2.1.a.3.js"></script>
+	<script type="text/javascript" src="js/libs/boxbox/boxbox.js"></script>
+		<script type="text/javascript">
+			var scaleFactor = 30,// Convert Box2D's units to pixels
+			world = boxbox.createWorld(canvas);
+			window.onload = function() {
+				var	canvas = document.getElementById("canvas"),
+				ground = world.createEntity({
+					color: "rgba(0,0,0,1)",
+					x: 250 / scaleFactor,
+					y: 480 / scaleFactor,
+					width: 500 / scaleFactor,
+					height: 10 / scaleFactor,
+					type: "static"
+				});
+			}
+
+			var button = document.getElementById("button-begin");
+			button.onclick = function() {
+				// Make a bunch of boxes
+				for (var i = 0, len = 10; i < len; i++) {
+					var dim = Math.random() * (50 / scaleFactor) + (50 / scaleFactor), // Random size
+					player = world.createEntity({
+						color: "rgba(0,0,0,1)",
+						x: Math.random() * 500 / scaleFactor,
+						y: Math.random() * -10,
+						width: dim,
+						height: dim
+					});
+				}
+			}
+
+			window.begin = function() {
+				
+			}
+		</script>
+</html>

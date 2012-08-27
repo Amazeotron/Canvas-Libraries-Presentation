@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+	<head>
+		<title>CreateJS Example</title>
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500"></canvas>
+	</body>
+	<script type="text/javascript" src="js/libs/canvascript/jCanvaScript.1.5.15.js"></script>
+		<script type="text/javascript">
+			window.onload = function(event) {
+				jc.start("canvas", true);
+				jc.circle(100, 100, 20, "rgba(200, 34, 20, 1)", true);
+				// .animate({ radius:100, opacity: 0 }, 1500, function() {
+				//	this.del();
+				//})
+			}
+		</script>
+</html>

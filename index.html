@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rundown of Canvas (and SVG) Animation Libraries</title>
+
+	<link href='http://fonts.googleapis.com/css?family=Ruluko' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/theme/default.css">
+	<link rel="stylesheet" href="css/zenburn.css">
+
+	<style type="text/css">
+		body {
+			font-family: 'Ruluko', Helvetica, sans-serif;
+		}
+	</style>
+
+	<!--[if lt IE 9]>
+	<script src="js/libs/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			
+			<section>
+				<h1>HTML5 Canvas Libraries</h1>
+			</section>
+
+			<section>
+				<h2>There are a few libraries out there.</h2>
+				<p>Let's look at CreateJS, KineticJS, FabricJS, CanvaScript, CAKE and Boxbox</p>
+			</section>
+
+			<section>
+				<section>
+					<h2>CreateJS</h2>
+					<q>A suite of Javascript libraries &amp; tools for building rich, interactive experiences with HTML5.</q>
+					<ul>
+						<li>EaselJS, TweenJS, SoundJS, PreloadJS</li>
+						<li>EaselJS is the one that actually helps drawing on Canvas</li>
+					</ul>
+				</section>
+				<section>
+					<pre><code contenteditable style="margin-top: 20px;" class="javascript">
+var canvas, stage; 
+canvas = document.querySelector("#canvas");
+stage = new Stage(canvas);
+var g = new Graphics();
+g.setStrokeStyle(1);
+g.beginStroke(Graphics.getRGB(0,0,0));
+g.beginFill(Graphics.getRGB(255,0,0));
+g.drawCircle(0,0,20);
+var s = new Shape(g);
+s.x = 100;
+s.y = 100;
+stage.addChild(s);
+stage.update();
+					</code></pre>
+				</section>
+				<section>
+					<h2>Example</h2>
+					<iframe src="examples/createjs.html" frameborder="0" width="500" height="500"></iframe>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h2>KineticJS</h2>
+					<q>KineticJS is an HTML5 Canvas JavaScript library that extends the 2d context by enabling high performance path detection and pixel detection for desktop and mobile applications.</q>
+				</section>
+				<section>
+					<pre><code contenteditable style="margin-top: 20px;" class="javascript">
+var stage = new Kinetic.Stage({
+	container: "container",
+	width: 500,
+	height: 500
+});
+var layer = new Kinetic.Layer();
+var rect = new Kinetic.Rect({
+	x: 100,
+	y: 100,
+	width: 100,
+	height: 100,
+	fill: "#442d56",
+	stroke: "black",
+	strokeWidth: 2
+});
+layer.add(rect);
+stage.add(layer);
+					</code></pre>
+				</section>
+				<section>
+					<h2>Example</h2>
+					<iframe src="examples/kineticjs.html" frameborder="0" width="500" height="500"></iframe>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h2>FabricJS</h2>
+					<q>Fabric.js is a framework that makes it easy to work with HTML5 canvas element. It is an interactive object model on top of canvas element. It is also an SVG-to-canvas (and canvas-to-SVG) parser.</q>
+					<ul>
+						<li>Converts easily between SVG and Canvas code via JSON.</li>
+						<li>Allows real time manipulation of objects on the canvas.</li>
+						<li>Dynamic manipulation of text.</li>
+						<li>Uses Node to build.</li>
+					</ul>
+				</section>
+				<section>
+					<pre><code contenteditable style="margin-top: 20px;" class="javascript">
+var canvas = new fabric.Canvas('canvas');
+var dot = new fabric.Circle({
+	left: 100,
+	top: 100,
+	radius: 20,
+	fill: "#ffcc66",
+	stroke: "#666666",
+	strokeWidth: 3
+});
+canvas.add(dot);
+					</code></pre>
+				</section>
+				<section>
+					<h2>Example</h2>
+					<iframe src="examples/fabricjs.html" frameborder="0" width="500" height="500"></iframe>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h2>CanvaScript</h2>
+					<q>A Javascript library that provides you methods to manage with the content of a HTML5 canvas element easily. It runs on any platform (including iPhone, iPad, Android) that supports canvas and JavaScript. To add support for canvas in Internet Explorer you can use ExCanvas.</q>
+					<p>Content</p>
+					<ul>
+						<li>Features...</li>
+						<li>more features</li>
+					</ul>
+				</section>
+				<section>
+					<pre><code contenteditable style="margin-top: 20px;" class="javascript">
+jc.start("canvas", true);
+jc.circle(100, 100, 20, "rgba(200, 34, 20, 1)", true);
+					</code></pre>
+				</section>
+				<section>
+					<p>Example</p>
+					<iframe src="examples/canvascript.html" frameborder="0" width="500" height="500"></iframe>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h2>CAKE</h2>
+					<q>CAKE is a JavaScript scene graph library for the HTML5 canvas tag. You could think of it as SVG sans the XML and not be too far off.</q>
+					<ul>
+						<li>No documentation! :(</li>
+						<li>Code base hasn't been updated in over a year. Dead?</li>
+					</ul>
+				</section>
+				<section>
+					<pre><code contenteditable style="margin-top: 20px;" class="javascript">
+var canvas = new Canvas(document.body, 500, 500);
+var circle = new Circle(50, {
+	id: 'theCircle',
+	x: 100,
+	y: 200,
+	fill: "rgb(200,25,40)",
+	stroke: "rgb(0,0,0)",
+	strokeWidth: 3,
+	endAngle: Math.PI*2
+});
+canvas.append(circle);
+					</code></pre>
+				</section>
+				<section>
+					<h2>Example</h2>
+					<iframe src="examples/cakejs.html" frameborder="0" width="500" height="500"></iframe>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h2>Boxbox</h2>
+					<q>BoxBox is a wrapper for Box2DWeb. Box2dWeb is a physics engine. It is a port of Box2DFlash 2.1a to JavaScript.</q>
+					<ul>
+						<li>Not a drawing lib for Canvas necessarily--just a wrapper for Box2DWeb, which is a port of Box2DFlash, which is a port of Box2D.</li>
+					</ul>
+				</section>
+				<section>
+					<pre><code contenteditable style="margin-top: 20px;" class="javascript">
+var scaleFactor = 30, // Convert Box2D's units to pixels
+	canvas = document.getElementById("canvas"),
+	world = boxbox.createWorld(canvas),
+	ground = world.createEntity({
+		color: "rgba(0,0,0,1)",
+		x: 250 / scaleFactor,
+		y: 480 / scaleFactor,
+		width: 500 / scaleFactor,
+		height: 10 / scaleFactor,
+		type: "static"
+	});
+
+// Make a bunch of boxes
+for (var i = 0, len = 10; i &lt; len; i++) {
+	var dim = Math.random() * (50 / scaleFactor) + (50 / scaleFactor), // Random size
+		player = world.createEntity({
+			color: "rgba(0,0,0,1)",
+			x: Math.random() * 500 / scaleFactor,
+			y: Math.random() * -10,
+			width: dim,
+			height: dim
+		});
+}
+					</code></pre>
+				</section>
+				<section data-state="showboxbox">
+					<h2>Example</h2>
+					<iframe id="frame-boxbox" src="examples/boxbox.html" frameborder="0" width="500" height="500" scrolling="no" sandbox="allow-same-origin allow-scripts"></iframe>
+				</section>
+			</section>
+
+			<section>
+				<h1>Other Options Besides Canvas</h1>
+				<ul>
+					<li>SVG</li>
+					<li>WebGL</li>
+				</ul>
+			</section>
+
+		</div>
+
+		<!-- The navigational controls UI -->
+		<aside class="controls">
+			<a class="left" href="#">&#x25C4;</a>
+			<a class="right" href="#">&#x25BA;</a>
+			<a class="up" href="#">&#x25B2;</a>
+			<a class="down" href="#">&#x25BC;</a>
+		</aside>
+
+		<!-- Presentation progress bar -->
+		<div class="progress"><span></span></div>
+	</div>
+
+	<script type="text/javascript" src="js/libs/head.min.js"></script>
+	<script type="text/javascript" src="js/libs/reveal.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

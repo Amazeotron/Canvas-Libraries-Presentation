@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<title>CAKE Example</title>
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript" src="js/libs/cake/cake.js"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				var canvas = new Canvas(document.body, 500, 500);
+				var circle = new Circle(50, {
+					id: 'theCircle',
+					x: 100,
+					y: 200,
+					fill: "rgb(200,25,40)",
+					stroke: "rgb(0,0,0)",
+					strokeWidth: 3,
+					endAngle: Math.PI*2
+				});
+				canvas.append(circle);
+			}
+		</script>
+</html>
