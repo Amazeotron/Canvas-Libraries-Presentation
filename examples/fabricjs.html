@@ -6,17 +6,32 @@
 			body {
 				margin: 0;
 				padding: 0;
+				color: rgb(200,200,200);
+				background: rgb(0,0,0);
+			}
+			#wrap {
+				width: 500px;
+			}
+			#output {
+				word-wrap: break-word;
 			}
 		</style>
 	</head>
 	<body>
-		<canvas id="canvas" width="500" height="500"></canvas>
+		
+		<div id="wrap">
+			<button id="toJSONButton">Export to JSON</button>
+			<canvas id="canvas" width="500" height="300"></canvas>
+			<div id="output"></div>
+		</div>
+		
 	</body>
 	<script type="text/javascript" src="js/libs/fabric/all.js"></script>
 		<script type="text/javascript">
+			var canvas, dot, toJSONButton;
 			window.onload = function() {
-				var canvas = new fabric.Canvas('canvas');
-				var dot = new fabric.Circle({
+				canvas = new fabric.Canvas('canvas');
+				dot = new fabric.Circle({
 					left: 100,
 					top: 100,
 					radius: 20,
@@ -25,6 +40,14 @@
 					strokeWidth: 3
 				});
 				canvas.add(dot);
+
+				toJSONButton = document.getElementById("toJSONButton");
+				toJSONButton.addEventListener('click', function(event) {
+					var json = canvas.toJSON();
+					json = JSON.stringify(json);
+					var container = document.querySelector("#output");
+					container.innerHTML = json;
+				}, false);
 			}
 		</script>
 </html>
