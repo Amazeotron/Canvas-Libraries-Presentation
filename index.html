@@ -12,6 +12,13 @@
 		body {
 			font-family: 'Ruluko', Helvetica, sans-serif;
 		}
+		code {
+			margin-top: 20px;
+		}
+
+		.reveal h2 {
+			margin-top: 40px;
+		}
 	</style>
 
 	<!--[if lt IE 9]>
@@ -25,7 +32,7 @@
 			
 			<section>
 				<h1>HTML5 Canvas Libraries</h1>
-				<h1>HTML5 Animation Tools (not just Canvas)</h1>
+				<h1>HTML5 Animation Tools</h1><p>(not just Canvas)</p>
 			</section>
 
 			<section>
@@ -36,7 +43,25 @@
 			</section>
 
 			<section>
+				<h1>What is Canvas</h1>
+				<q>The canvas element is part of HTML5 and allows for dynamic, scriptable rendering of 2D shapes and bitmap images. It is a low level, procedural model that updates a bitmap and does not have a built-in scene graph.</q>
+				<pre><code contenteditable class="javascript">
+&lt;canvas width="500" height="500"&gt;This content is rendered if Canvas is not supported.&lt;/canvas&gt;
+				</code></pre>
+				<p>Browsers: IE 9+, Firefox 2+, Safari 3.1+, Chrome 4+, Opera 9+, Safari Mobile 3.2+, Opera Mobile 10+, Android 2.1+</p>
+			</section>
+
+			<section>
 				<h1>Canvas Libraries</h1>
+				<ul>
+					<li>CreateJS</li>
+					<li>KineticJS</li>
+					<li>FabricJS</li>
+					<li>CanvaScript</li>
+					<li>CAKE</li>
+					<li>Boxbox</li>
+					<li>...</li>
+				</ul>
 			</section>
 
 			<section>
@@ -49,7 +74,7 @@
 					</ul>
 				</section>
 				<section>
-					<pre><code contenteditable style="margin-top: 20px;" class="javascript">
+					<pre><code contenteditable class="javascript">
 var canvas, stage; 
 canvas = document.querySelector("#canvas");
 stage = new Stage(canvas);
@@ -67,7 +92,7 @@ stage.update();
 				</section>
 				<section>
 					<h2>Example</h2>
-					<iframe src="examples/createjs.html" frameborder="0" width="500" height="500"></iframe>
+					<iframe src="examples/createjs.html" frameborder="0" width="500" height="500" scrolling="no"></iframe>
 				</section>
 			</section>
 
@@ -77,7 +102,7 @@ stage.update();
 					<q>KineticJS is an HTML5 Canvas JavaScript library that extends the 2d context by enabling high performance path detection and pixel detection for desktop and mobile applications.</q>
 				</section>
 				<section>
-					<pre><code contenteditable style="margin-top: 20px;" class="javascript">
+					<pre><code contenteditable class="javascript">
 var stage = new Kinetic.Stage({
 	container: "container",
 	width: 500,
@@ -99,7 +124,7 @@ stage.add(layer);
 				</section>
 				<section>
 					<h2>Example</h2>
-					<iframe src="examples/kineticjs.html" frameborder="0" width="500" height="500"></iframe>
+					<iframe src="examples/kineticjs.html" frameborder="0" width="500" height="500" scrolling="no"></iframe>
 				</section>
 			</section>
 
@@ -115,7 +140,7 @@ stage.add(layer);
 					</ul>
 				</section>
 				<section>
-					<pre><code contenteditable style="margin-top: 20px;" class="javascript">
+					<pre><code contenteditable class="javascript">
 var canvas = new fabric.Canvas('canvas');
 var dot = new fabric.Circle({
 	left: 100,
@@ -145,14 +170,14 @@ canvas.add(dot);
 					</ul>
 				</section>
 				<section>
-					<pre><code contenteditable style="margin-top: 20px;" class="javascript">
+					<pre><code contenteditable class="javascript">
 jc.start("canvas", true);
 jc.circle(100, 100, 20, "rgba(200, 34, 20, 1)", true);
 					</code></pre>
 				</section>
 				<section>
 					<p>Example</p>
-					<iframe src="examples/canvascript.html" frameborder="0" width="500" height="500"></iframe>
+					<iframe src="examples/canvascript.html" frameborder="0" width="500" height="500" scrolling="no"></iframe>
 				</section>
 			</section>
 
@@ -166,7 +191,7 @@ jc.circle(100, 100, 20, "rgba(200, 34, 20, 1)", true);
 					</ul>
 				</section>
 				<section>
-					<pre><code contenteditable style="margin-top: 20px;" class="javascript">
+					<pre><code contenteditable class="javascript">
 var canvas = new Canvas(document.body, 500, 500);
 var circle = new Circle(50, {
 	id: 'theCircle',
@@ -182,7 +207,7 @@ canvas.append(circle);
 				</section>
 				<section>
 					<h2>Example</h2>
-					<iframe src="examples/cakejs.html" frameborder="0" width="500" height="500"></iframe>
+					<iframe src="examples/cakejs.html" frameborder="0" width="500" height="500" scrolling="no"></iframe>
 				</section>
 			</section>
 
@@ -195,7 +220,7 @@ canvas.append(circle);
 					</ul>
 				</section>
 				<section>
-					<pre><code contenteditable style="margin-top: 20px;" class="javascript">
+					<pre><code contenteditable class="javascript">
 var scaleFactor = 30, // Convert Box2D's units to pixels
 	canvas = document.getElementById("canvas"),
 	world = boxbox.createWorld(canvas),
@@ -266,6 +291,7 @@ for (var i = 0, len = 10; i &lt; len; i++) {
 					<h2>Tumult Hype</h2>
 					<q>Using Tumult Hype, you can create beautiful HTML5 web content. Animations and interactive content made with Tumult Hype works on desktops, smartphones and iPads. No coding required.</q>
 					<ul>
+						<li>Mac only</li>
 						<li>Does not use Canvas.</li>
 						<li>Produces valid, state-of-the-art HTML5, CSS3, and Javascript.</li>
 					</ul>
